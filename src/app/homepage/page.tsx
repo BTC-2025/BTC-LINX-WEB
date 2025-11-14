@@ -1,10 +1,12 @@
+"use client";
+
 import type { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import HomepageInteractive from './components/HomepageInteractive';
 
 export const metadata: Metadata = {
   title: 'Homepage - BTC Linx Enterprise',
-  description: 'Intelligent automation that adapts to your business. Transform your enterprise with AI-powered solutions that deliver measurable results across industries.',
+  description: 'Intelligent automation...',
 };
 
 export default function Homepage() {
