@@ -1,9 +1,13 @@
-export default function Home() {
-  return (
-    <main style={{ padding: "40px", fontSize: "24px" }}>
-      <h1>Test Homepage Works 🚀</h1>
-      <p>If you see this, the redirect is NOT the problem.</p>
-      <p>If you do NOT see this in production, your /homepage route is failing.</p>
-    </main>
-  );
+import type { Metadata } from 'next';
+// import HomepageWrapper from './HomepageWrapper';
+
+import HomepageWrapper from './homepage/HomepageWrapper';
+
+export const metadata: Metadata = {
+  title: 'Homepage - BTC Linx Enterprise',
+  description: 'Intelligent automation...',
+};
+
+export default function Homepage() {
+  return <HomepageWrapper />;
 }
