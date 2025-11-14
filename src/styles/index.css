@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: #FFFFFF;
+    --color-foreground: #0F172A;
+    --color-border: #E2E8F0;
+    --color-input: #F8FAFC;
+    --color-ring: #1E3A8A;
+
+    --color-card: #FFFFFF;
+    --color-card-foreground: #0F172A;
+
+    --color-popover: #FFFFFF;
+    --color-popover-foreground: #0F172A;
+
+    --color-muted: #F1F5F9;
+    --color-muted-foreground: #64748B;
+
+    --color-primary: #1E3A8A;
+    --color-primary-foreground: #FFFFFF;
+
+    --color-secondary: #F8FAFC;
+    --color-secondary-foreground: #0F172A;
+
+    --color-destructive: #DC2626;
+    --color-destructive-foreground: #FFFFFF;
+
+    --color-accent: #D4AF37;
+    --color-accent-foreground: #0F172A;
+
+    --color-success: #059669;
+    --color-success-foreground: #FFFFFF;
+
+    --color-warning: #D97706;
+    --color-warning-foreground: #FFFFFF;
+
+    --color-error: #DC2626;
+    --color-error-foreground: #FFFFFF;
+
+    --color-surface: #F1F5F9;
+    --color-surface-foreground: #0F172A;
+
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #64748B;
+
+    --radius: 0.5rem;
+  }
+
+  /* Apply border color globally */
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
