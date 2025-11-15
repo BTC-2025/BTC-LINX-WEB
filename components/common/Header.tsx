@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 // import Icon from '@/components/ui/AppIcon';
 import Icon from '../ui/AppIcon';
+import logo from '../../public/image.png'
 
 
 interface HeaderProps {
