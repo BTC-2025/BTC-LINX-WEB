@@ -22,7 +22,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-6">
+            {/* <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">500+</div>
                 <div className="text-sm text-muted-foreground">Enterprise Clients</div>
@@ -35,7 +35,23 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
                 <div className="text-3xl font-bold text-primary">24/7</div>
                 <div className="text-sm text-muted-foreground">Global Support</div>
               </div>
+            </div> */}
+
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-xl font-semibold text-primary">Excellence</div>
+                <div className="text-xs text-muted-foreground">In every solution</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-semibold text-primary">Integrity</div>
+                <div className="text-xs text-muted-foreground">At our core</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-semibold text-primary">Commitment</div>
+                <div className="text-xs text-muted-foreground">To every partner</div>
+              </div>
             </div>
+
           </div>
           
           <div className="relative">

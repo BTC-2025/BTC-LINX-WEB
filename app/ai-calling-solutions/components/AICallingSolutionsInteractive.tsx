@@ -15,28 +15,67 @@ interface DemoModalProps {
   type: 'demo' | 'consultation';
 }
 
+
 const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    message: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      onClose();
-      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-    }, 2000);
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://btc-linx-web-be.onrender.com/api/schedule/create",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            companyname: formData.company,
+            phonenum: formData.phone,
+            message: formData.message,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+
+        setTimeout(() => {
+          onClose();
+          setIsSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            company: "",
+            phone: "",
+            message: "",
+          });
+        }, 2000);
+      } else {
+        alert(data.message || "Something went wrong!");
+      }
+    } catch (err) {
+      alert("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   if (!isOpen) return null;
@@ -44,9 +83,21 @@ const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-2xl max-w-md w-full p-6 relative">
+
+        {/* ❗ FULLSCREEN LOADER OVERLAY */}
+        {loading && (
+          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[9999] animate-fadeIn">
+            <div className="flex flex-col items-center gap-4">
+              <div className="h-12 w-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-white text-lg font-medium">Submitting...</p>
+            </div>
+          </div>
+        )}
+
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+          disabled={loading} // Prevent closing while loading
         >
           ✕
         </button>
@@ -54,9 +105,9 @@ const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
         {!isSubmitted ? (
           <>
             <h3 className="text-2xl font-semibold text-foreground mb-6">
-              {type === 'demo' ? 'Request Live Demo' : 'Schedule Consultation'}
+              {type === "demo" ? "Request Live Demo" : "Schedule Consultation"}
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
@@ -65,12 +116,14 @@ const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
                 <input
                   type="text"
                   value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("name", e.target.value)
+                  }
                   className="w-full px-3 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   required
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
                   Business Email *
@@ -78,12 +131,14 @@ const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
                 <input
                   type="email"
                   value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("email", e.target.value)
+                  }
                   className="w-full px-3 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   required
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
                   Company Name *
@@ -91,12 +146,14 @@ const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
                 <input
                   type="text"
                   value={formData.company}
-                  onChange={(e) => handleInputChange('company', e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("company", e.target.value)
+                  }
                   className="w-full px-3 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   required
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
                   Phone Number
@@ -104,44 +161,69 @@ const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
                 <input
                   type="tel"
                   value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("phone", e.target.value)
+                  }
                   className="w-full px-3 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
                   Message
                 </label>
                 <textarea
                   value={formData.message}
-                  onChange={(e) => handleInputChange('message', e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("message", e.target.value)
+                  }
                   rows={3}
                   className="w-full px-3 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Tell us about your specific needs..."
                 />
               </div>
-              
+
               <button
                 type="submit"
-                className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
+                disabled={loading}
+                className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 disabled:opacity-60 flex items-center justify-center gap-2"
               >
-                {type === 'demo' ? 'Request Demo' : 'Schedule Consultation'}
+                {loading ? (
+                  <>
+                    <span className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    Submitting...
+                  </>
+                ) : type === "demo" ? (
+                  "Request Demo"
+                ) : (
+                  "Schedule Consultation"
+                )}
               </button>
             </form>
           </>
         ) : (
           <div className="text-center py-8">
             <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <svg
+                className="w-8 h-8 text-success"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-2">
               Request Submitted!
             </h3>
             <p className="text-muted-foreground">
-              We'll contact you within 24 hours to schedule your {type === 'demo' ? 'demo' : 'consultation'}.
+              We'll contact you within 24 hours to schedule your{" "}
+              {type === "demo" ? "demo" : "consultation"}.
             </p>
           </div>
         )}
@@ -149,6 +231,7 @@ const DemoModal = ({ isOpen, onClose, type }: DemoModalProps) => {
     </div>
   );
 };
+
 
 const AICallingSolutionsInteractive = () => {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -173,6 +256,11 @@ const AICallingSolutionsInteractive = () => {
     if (!isHydrated) return;
     setModalState({ isOpen: true, type: 'consultation' });
   };
+
+  const handleCustomIntegrationClick = () => {
+    setModalState({ isOpen: true, type: 'consultation' });
+  };
+
 
   const handleCloseModal = () => {
     if (!isHydrated) return;
@@ -199,8 +287,10 @@ const AICallingSolutionsInteractive = () => {
       />
       <FeaturesSection />
       <DemoSection onBookDemo={handleDemoClick} />
-      <IntegrationsSection />
-      <ROICalculator />
+      {/* <IntegrationsSection /> */}
+      <IntegrationsSection onRequestCustomIntegration={handleCustomIntegrationClick} />
+
+      {/* <ROICalculator /> */}
       <CaseStudiesSection />
       <CTASection 
         onDemoRequest={handleDemoClick}

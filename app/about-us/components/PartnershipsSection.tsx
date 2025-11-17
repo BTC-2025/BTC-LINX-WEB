@@ -189,7 +189,7 @@ const PartnershipsSection = ({ className = '' }: PartnershipsSectionProps) => {
           </div>
           
           {/* Trust Metrics */}
-          <div className="bg-white rounded-2xl p-8 shadow-soft">
+          {/* <div className="bg-white rounded-2xl p-8 shadow-soft">
             <div className="text-center space-y-6 mb-8">
               <h3 className="text-2xl font-bold text-foreground">Trust & Reliability Metrics</h3>
               <p className="text-muted-foreground">
@@ -215,7 +215,7 @@ const PartnershipsSection = ({ className = '' }: PartnershipsSectionProps) => {
                 <div className="text-sm text-muted-foreground">Client Satisfaction</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>);

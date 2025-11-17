@@ -16,7 +16,12 @@ interface Integration {
   features: string[];
 }
 
-const IntegrationsSection = () => {
+interface IntegrationsSectionProps {
+  onRequestCustomIntegration: () => void;
+}
+
+
+const IntegrationsSection = ({ onRequestCustomIntegration }: IntegrationsSectionProps) => {
   const integrations: Integration[] = [
   {
     id: 1,
@@ -162,11 +167,11 @@ const IntegrationsSection = () => {
         </div>
 
         {/* Integration Stats */}
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
-          <div className="text-center">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2">100+</div>
             <div className="text-sm text-muted-foreground">Available Integrations</div>
-          </div>
+          </div> */}
           <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
             <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
@@ -191,10 +196,15 @@ const IntegrationsSection = () => {
             Enterprise clients get priority access to our integration development services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+            <button
+              onClick={onRequestCustomIntegration}
+              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
+            >
               <Icon name="CodeBracketIcon" size={20} className="mr-2" />
               Request Custom Integration
             </button>
+
+
             <button className="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200">
               <Icon name="DocumentTextIcon" size={20} className="mr-2" />
               View API Documentation

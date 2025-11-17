@@ -36,11 +36,11 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            <div className="text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {/* <div className="text-center">
               <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">50+</div>
               <div className="text-sm text-muted-foreground">Technology Partners</div>
-            </div>
+            </div> */}
             <div className="text-center">
               <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">99.9%</div>
               <div className="text-sm text-muted-foreground">Uptime Guarantee</div>

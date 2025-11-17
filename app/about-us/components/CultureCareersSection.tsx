@@ -136,14 +136,14 @@ const CultureCareersSection = ({ className = '' }: CultureCareersSectionProps) =
 
               Company Culture
             </button>
-            <button
+            {/* <button
               onClick={() => setActiveTab('careers')}
               className={`px-6 py-3 rounded-md text-sm font-semibold transition-all duration-200 ${
               activeTab === 'careers' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`
               }>
 
               Career Opportunities
-            </button>
+            </button> */}
           </div>
         </div>
         

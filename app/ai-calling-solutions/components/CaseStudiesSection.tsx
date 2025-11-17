@@ -263,7 +263,7 @@ const CaseStudiesSection = () => {
         </div>
 
         {/* Bottom Stats */}
-        <div className="grid md:grid-cols-4 gap-8 mt-16 text-center">
+        {/* <div className="grid md:grid-cols-4 gap-8 mt-16 text-center">
           <div>
             <div className="text-3xl font-bold text-primary mb-2">500+</div>
             <div className="text-sm text-muted-foreground">Successful Implementations</div>
@@ -280,7 +280,7 @@ const CaseStudiesSection = () => {
             <div className="text-3xl font-bold text-primary mb-2">24/7</div>
             <div className="text-sm text-muted-foreground">Support & Monitoring</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>);
 

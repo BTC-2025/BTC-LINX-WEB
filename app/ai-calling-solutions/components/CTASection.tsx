@@ -148,11 +148,11 @@ const CTASection = ({ onDemoRequest, onConsultationRequest }: CTASectionProps) =
               <div className="space-y-2 text-sm text-white/90">
                 <div className="flex items-center justify-center space-x-2">
                   <Icon name="PhoneIcon" size={14} />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 9444369625</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Icon name="EnvelopeIcon" size={14} />
-                  <span>ai-solutions@btclinx.com</span>
+                  <span>info.btclinx@gmail.com</span>
                 </div>
               </div>
             </div>

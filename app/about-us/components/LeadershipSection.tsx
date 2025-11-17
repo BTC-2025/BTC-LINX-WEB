@@ -65,71 +65,119 @@ const LeadershipSection = ({ className = '' }: LeadershipSectionProps) => {
 
 
   return (
+    // <section className={`py-20 bg-slate-50 ${className}`}>
+    //   <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    //     <div className="text-center space-y-6 mb-16">
+    //       <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
+    //         Leadership Team
+    //       </div>
+    //       <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
+    //         Visionary Leaders Driving Innovation
+    //       </h2>
+    //       <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+    //         Our executive team combines decades of enterprise technology experience with a passion for transforming how businesses operate through intelligent automation.
+    //       </p>
+    //     </div>
+        
+    //     <div className="grid md:grid-cols-2 gap-8">
+    //       {leaders.map((leader) =>
+    //       <div key={leader.id} className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-shadow duration-300">
+    //           <div className="flex flex-col sm:flex-row gap-6">
+    //             <div className="flex-shrink-0">
+    //               <AppImage
+    //               src={leader.image}
+    //               alt={leader.alt}
+    //               className="w-24 h-24 rounded-xl object-cover" />
+
+    //             </div>
+                
+    //             <div className="flex-1 space-y-4">
+    //               <div>
+    //                 <h3 className="text-xl font-bold text-foreground">{leader.name}</h3>
+    //                 <p className="text-primary font-semibold">{leader.position}</p>
+    //               </div>
+                  
+    //               <p className="text-sm text-muted-foreground leading-relaxed">
+    //                 {leader.bio}
+    //               </p>
+                  
+    //               <div className="space-y-3">
+    //                 <div>
+    //                   <h4 className="text-sm font-semibold text-foreground mb-2">Expertise Areas</h4>
+    //                   <div className="flex flex-wrap gap-2">
+    //                     {leader.expertise.map((skill, index) =>
+    //                   <span key={index} className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">
+    //                         {skill}
+    //                       </span>
+    //                   )}
+    //                   </div>
+    //                 </div>
+                    
+    //                 <a
+    //                 href={leader.linkedin}
+    //                 target="_blank"
+    //                 rel="noopener noreferrer"
+    //                 className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors duration-200">
+
+    //                   <Icon name="LinkIcon" size={16} />
+    //                   Connect on LinkedIn
+    //                 </a>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       )}
+    //     </div>
+    //   </div>
+    // </section>
+
     <section className={`py-20 bg-slate-50 ${className}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-            Leadership Team
+            Leadership
           </div>
+
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-            Visionary Leaders Driving Innovation
+            A Clear Vision. A Strong Direction.
           </h2>
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our executive team combines decades of enterprise technology experience with a passion for transforming how businesses operate through intelligent automation.
+            At BTC Linx Enterprise, leadership is defined not by titles, but by a shared commitment 
+            to excellence, innovation, and responsible technology development. Our approach is 
+            grounded in clarity, discipline, and long-term strategic thinking.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          {leaders.map((leader) =>
-          <div key={leader.id} className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-shadow duration-300">
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex-shrink-0">
-                  <AppImage
-                  src={leader.image}
-                  alt={leader.alt}
-                  className="w-24 h-24 rounded-xl object-cover" />
 
-                </div>
-                
-                <div className="flex-1 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">{leader.name}</h3>
-                    <p className="text-primary font-semibold">{leader.position}</p>
-                  </div>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {leader.bio}
-                  </p>
-                  
-                  <div className="space-y-3">
-                    <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-2">Expertise Areas</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {leader.expertise.map((skill, index) =>
-                      <span key={index} className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                            {skill}
-                          </span>
-                      )}
-                      </div>
-                    </div>
-                    
-                    <a
-                    href={leader.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors duration-200">
-
-                      <Icon name="LinkIcon" size={16} />
-                      Connect on LinkedIn
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Strategic Vision",
+              desc: "Focused on building meaningful, scalable, and future-ready technology."
+            },
+            {
+              title: "Operational Discipline",
+              desc: "Driving consistency, quality, and reliability across every initiative."
+            },
+            {
+              title: "Innovation Mindset",
+              desc: "Constantly exploring new ideas that deliver real-world impact."
+            }
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-shadow text-center"
+            >
+              <h3 className="text-xl font-semibold text-primary mb-3">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.desc}</p>
             </div>
-          )}
+          ))}
         </div>
       </div>
-    </section>);
+    </section>
+
+    
+  );
 
 };
 

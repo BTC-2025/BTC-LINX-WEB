@@ -57,7 +57,7 @@ const AboutUsInteractive = ({ className = '' }: AboutUsInteractiveProps) => {
       <LeadershipSection />
       <TechnologyPhilosophySection />
       <PartnershipsSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <CompanyTimelineSection />
       <CultureCareersSection />
     </div>

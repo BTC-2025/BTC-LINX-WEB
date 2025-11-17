@@ -18,7 +18,7 @@ const IndustriesInteractive = ({ className = '' }: IndustriesInteractiveProps) =
       <HeroSection />
       <IndustryGrid />
       <CaseStudySection />
-      <ROICalculator />
+      {/* <ROICalculator /> */}
       <ComplianceSection />
       <CTASection />
     </div>

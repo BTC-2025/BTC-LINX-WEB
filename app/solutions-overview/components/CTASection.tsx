@@ -133,19 +133,19 @@ const CTASection = ({ onGetStarted, onScheduleDemo, onDownloadGuide }: CTASectio
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-            <div className="text-center">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 mb-8">
+            {/* <div className="text-center">
               <div className="text-3xl font-bold text-primary mb-1">500+</div>
               <div className="text-sm text-muted-foreground">Enterprise Clients</div>
-            </div>
+            </div> */}
             <div className="text-center">
               <div className="text-3xl font-bold text-success mb-1">99.9%</div>
               <div className="text-sm text-muted-foreground">Uptime SLA</div>
             </div>
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="text-3xl font-bold text-accent mb-1">$50M+</div>
               <div className="text-sm text-muted-foreground">Client Savings</div>
-            </div>
+            </div> */}
             <div className="text-center">
               <div className="text-3xl font-bold text-primary mb-1">24/7</div>
               <div className="text-sm text-muted-foreground">Support</div>
@@ -192,7 +192,7 @@ const CTASection = ({ onGetStarted, onScheduleDemo, onDownloadGuide }: CTASectio
               className="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-200"
             >
               <Icon name="EnvelopeIcon" size={20} className="mr-2" />
-              solutions@btclinx.com
+              info.btclinx@gmail.com
             </a>
           </div>
         </div>

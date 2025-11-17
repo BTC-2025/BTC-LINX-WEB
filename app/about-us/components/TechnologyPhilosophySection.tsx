@@ -40,29 +40,6 @@ const TechnologyPhilosophySection = ({ className = '' }: TechnologyPhilosophySec
     }
   ];
 
-  const innovations = [
-    {
-      year: '2024',
-      title: 'Advanced AI Calling Platform',
-      description: 'Launched next-generation conversational AI with 99.2% accuracy in natural language understanding.'
-    },
-    {
-      year: '2023',
-      title: 'Quantum-Safe Security Framework',
-      description: 'Implemented post-quantum cryptography standards across all enterprise solutions.'
-    },
-    {
-      year: '2022',
-      title: 'Intelligent Network Automation',
-      description: 'Developed self-healing network infrastructure with predictive maintenance capabilities.'
-    },
-    {
-      year: '2021',
-      title: 'Enterprise AI Analytics Suite',
-      description: 'Created comprehensive business intelligence platform with real-time decision support.'
-    }
-  ];
-
   return (
     <section className={`py-20 bg-white ${className}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -103,7 +80,7 @@ const TechnologyPhilosophySection = ({ className = '' }: TechnologyPhilosophySec
           </div>
           
           {/* Innovation Timeline */}
-          <div className="space-y-8">
+          {/* <div className="space-y-8">
             <h3 className="text-2xl font-bold text-foreground">Recent Innovations</h3>
             
             <div className="space-y-6">
@@ -138,7 +115,59 @@ const TechnologyPhilosophySection = ({ className = '' }: TechnologyPhilosophySec
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
+<div className="space-y-10">
+  <h3 className="text-2xl font-bold text-foreground">Technical Foundations</h3>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h4 className="font-semibold text-foreground mb-2">Design Principles</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        Clear architecture, structured development, and consistent patterns guide every project.
+      </p>
+    </div>
+
+    <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h4 className="font-semibold text-foreground mb-2">Code Standards</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        We enforce strong coding guidelines to ensure readability, maintainability, and quality.
+      </p>
+    </div>
+
+    <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h4 className="font-semibold text-foreground mb-2">Infrastructure</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        Robust deployment practices and secure operational workflows form our foundation.
+      </p>
+    </div>
+
+    <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h4 className="font-semibold text-foreground mb-2">Testing & Quality</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        We conduct layered testing, ensuring reliability across all system components.
+      </p>
+    </div>
+
+    <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h4 className="font-semibold text-foreground mb-2">Optimization</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        Performance tuning and monitoring ensure efficient handling of demanding workloads.
+      </p>
+    </div>
+
+    <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h4 className="font-semibold text-foreground mb-2">Scalability</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        Built to grow—our modular architecture supports future expansion seamlessly.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
         </div>
       </div>
     </section>

@@ -232,3 +232,6 @@ const TrustIndicators = ({ className = '' }: TrustIndicatorsProps) => {
 };
 
 export default TrustIndicators;
+
+
+

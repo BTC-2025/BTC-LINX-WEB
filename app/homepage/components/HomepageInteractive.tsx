@@ -44,3 +44,6 @@ const HomepageInteractive = ({ className = '' }: HomepageInteractiveProps) => {
 };
 
 export default HomepageInteractive;
+
+
+

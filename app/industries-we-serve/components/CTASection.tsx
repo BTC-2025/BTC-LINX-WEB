@@ -52,11 +52,11 @@ const CTASection = ({ className = '' }: CTASectionProps) => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
+            <div className="grid grid-cols-2 gap-6">
+              {/* <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-primary mb-1">500+</div>
                 <div className="text-sm text-muted-foreground">Implementations</div>
-              </div>
+              </div> */}
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-success mb-1">340%</div>
                 <div className="text-sm text-muted-foreground">Average ROI</div>
@@ -121,11 +121,11 @@ const CTASection = ({ className = '' }: CTASectionProps) => {
               <div className="flex flex-wrap gap-6">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Icon name="PhoneIcon" size={16} className="text-primary" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 9444369625</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Icon name="EnvelopeIcon" size={16} className="text-primary" />
-                  <span>solutions@btclinx.com</span>
+                  <span>info.btclinx@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Icon name="ClockIcon" size={16} className="text-primary" />

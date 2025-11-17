@@ -18,9 +18,10 @@ interface Integration {
 
 interface IntegrationShowcaseProps {
   onLearnMore: (integrationId: string) => void;
+  onRequestIntegration: () => void;
 }
 
-const IntegrationShowcase = ({ onLearnMore }: IntegrationShowcaseProps) => {
+const IntegrationShowcase = ({ onLearnMore,onRequestIntegration }: IntegrationShowcaseProps) => {
   const integrations: Integration[] = [
   {
     id: 'aws',
@@ -219,10 +220,14 @@ const IntegrationShowcase = ({ onLearnMore }: IntegrationShowcaseProps) => {
             <p className="text-muted-foreground mb-4">
               Don't see your platform? We can build custom integrations for your specific needs.
             </p>
-            <button className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-200">
+            <button
+              onClick={onRequestIntegration}
+              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-200"
+            >
               <Icon name="PlusIcon" size={20} className="mr-2" />
               Request Custom Integration
             </button>
+
           </div>
         </div>
       </div>
