@@ -15,7 +15,7 @@ export default function RootLayout({
       <body>
         {children}
 
-        <Script
+        {/* <Script
           src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fbtclinxe5052back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10"
           type="module"
           strategy="afterInteractive"
@@ -25,7 +25,7 @@ export default function RootLayout({
           src="https://static.rocket.new/rocket-shot.js?v=0.0.1"
           type="module"
           strategy="afterInteractive"
-        />
+        /> */}
       </body>
     </html>
   );
